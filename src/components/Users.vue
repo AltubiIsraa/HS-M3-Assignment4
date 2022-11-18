@@ -13,7 +13,9 @@ onErrorCaptured((err) => {
   // error processing
 });
 
-const res = await fetch("https://ipinfo.io/161.185.160.93/geo");
+const res = await fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 console.log(res);
 if (!res.ok) {
   throw new Error();
@@ -23,6 +25,8 @@ response.value = await res.json();
 
 <template>
   <div>
-    <p>{{ response.id }}</p>
+    <h1>User</h1>
+    <p>{{ response.name }}</p>
+    <p>{{ response.street }}</p>
   </div>
 </template>
