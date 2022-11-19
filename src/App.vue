@@ -4,9 +4,9 @@ import Users from "./components/Users.vue";
 
 <template>
   <Suspense>
-    <Users class="async-component" />
+    <Users />
     <template #fallback>
-      <SimpleLoading class="async-component" />
+      <!-- <SimpleLoading class="async-component" /> -->
     </template>
   </Suspense>
 </template>
